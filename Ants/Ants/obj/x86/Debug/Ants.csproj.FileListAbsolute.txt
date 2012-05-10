@@ -1,0 +1,6 @@
+C:\Users\Max\Documents\Visual Studio 2010\Projects\Ants\Ants\Ants\bin\x86\Debug\Ants.exe
+C:\Users\Max\Documents\Visual Studio 2010\Projects\Ants\Ants\Ants\bin\x86\Debug\Ants.pdb
+C:\Users\Max\Documents\Visual Studio 2010\Projects\Ants\Ants\Ants\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Max\Documents\Visual Studio 2010\Projects\Ants\Ants\Ants\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Max\Documents\Visual Studio 2010\Projects\Ants\Ants\Ants\obj\x86\Debug\Ants.exe
+C:\Users\Max\Documents\Visual Studio 2010\Projects\Ants\Ants\Ants\obj\x86\Debug\Ants.pdb
