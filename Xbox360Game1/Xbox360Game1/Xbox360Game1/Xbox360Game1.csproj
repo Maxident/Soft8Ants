@@ -60,9 +60,12 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KILLYOUBLUD.cs" />
+    <Compile Include="newClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="SKEEN.cs" />
     <Compile Include="WHATYULOOKINAT.cs" />
   </ItemGroup>
   <ItemGroup>

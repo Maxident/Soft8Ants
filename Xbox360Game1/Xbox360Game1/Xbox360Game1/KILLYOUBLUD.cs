@@ -7,5 +7,6 @@ namespace Xbox360Game1
 {
     class KILLYOUBLUD
     {
+        String hrefgklsljg;
     }
 }
