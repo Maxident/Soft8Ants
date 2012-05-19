@@ -1,1 +1,2 @@
 C:\Users\Max\Documents\Visual Studio 2010\Projects\Ants\Ants\AntsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Max\Documents\GIT\Soft8Ants\Ants\AntsContent\obj\x86\Debug\ResolveAssemblyReference.cache

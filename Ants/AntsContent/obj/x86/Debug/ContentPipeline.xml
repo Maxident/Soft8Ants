@@ -1,18 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>TileBlank.png</Source>
+      <Name>TileBlank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\TileBlank.xnb</Output>
+      <Time>2012-05-19T20:24:24.8335244+01:00</Time>
+    </Item>
+    <Item>
+      <Source>TileRocky.png</Source>
+      <Name>TileRocky</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\TileRocky.xnb</Output>
+      <Time>2012-05-19T20:12:18.1569609+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Max\Documents\Visual Studio 2010\Projects\Ants\Ants\AntsContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Max\Documents\Visual Studio 2010\Projects\Ants\Ants\Ants\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Max\Documents\Visual Studio 2010\Projects\Ants\Ants\AntsContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Max\Documents\Visual Studio 2010\Projects\Ants\Ants\Ants\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\AntsContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\AntsContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T13:41:18+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T13:41:18+01:00</Value>
+      </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
         <Value>2012-02-06T16:15:28.9377409+00:00</Value>
