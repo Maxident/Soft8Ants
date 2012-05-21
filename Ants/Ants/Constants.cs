@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace Ants
-{
+{   //might just get rid of this...
     class Constants
     {
         public static int TileWidth = 6;

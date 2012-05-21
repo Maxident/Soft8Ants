@@ -12,16 +12,21 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Ants
 {
-    
+    //not actually done much here, just a bit of setup
     public class Ant : Microsoft.Xna.Framework.GameComponent
     {
         String colour;
         int x, y, dir, ID;
-        Boolean food;
-        public Ant(Game game)
+        Boolean carryingFood;
+        public Ant(Game game, String Colour, int X, int Y, int Dir, int id)
             : base(game)
         {
-            
+            carryingFood = false;
+            colour = Colour;
+            x = X;
+            y = Y;
+            dir = Dir;
+            ID = id;
         }
 
         public override void Initialize()

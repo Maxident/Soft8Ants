@@ -14,13 +14,15 @@ namespace Ants
 {
     public class Tile : Microsoft.Xna.Framework.GameComponent
     {
+        //probably not too much to look at here, most of the tile control is in other classes methods anyway
         Texture2D currentTex;
         Vector2 pos;
         SpriteBatch spriteBatch;
         int height, width, numFood;
         Boolean rocky, food, antHill, ant;
         String antColour;
-        public Tile(Game game, Texture2D CurrentTex, Vector2 Position, SpriteBatch spritebatch, Boolean Rocky, Boolean Anthill, Boolean Food, int NumFood, Boolean Ant, String AntColour, int pheremone)
+        public Tile(Game game, Texture2D CurrentTex, Vector2 Position, SpriteBatch spritebatch, 
+            Boolean Rocky, Boolean Anthill, Boolean Food, int NumFood, Boolean Ant, String AntColour, int pheremone)
             : base(game)
         {
             height = Constants.TileHeight;
@@ -37,8 +39,6 @@ namespace Ants
         }
         public override void Initialize()
         {
-            // TODO: Add your initialization code here
-
             base.Initialize();
         }
         public void Draw(GameTime gameTime)
