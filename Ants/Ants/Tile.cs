@@ -17,8 +17,10 @@ namespace Ants
         Texture2D currentTex;
         Vector2 pos;
         SpriteBatch spriteBatch;
-        int height, width;
-        public Tile(Game game, Texture2D CurrentTex, Vector2 Position, SpriteBatch spritebatch)
+        int height, width, numFood;
+        Boolean rocky, food, antHill, ant;
+        String antColour;
+        public Tile(Game game, Texture2D CurrentTex, Vector2 Position, SpriteBatch spritebatch, Boolean Rocky, Boolean Anthill, Boolean Food, int NumFood, Boolean Ant, String AntColour, int pheremone)
             : base(game)
         {
             height = Constants.TileHeight;
@@ -26,6 +28,12 @@ namespace Ants
             currentTex = CurrentTex;
             pos = Position;
             spriteBatch = spritebatch;
+            rocky = Rocky;
+            antHill = Anthill;
+            food = Food;
+            numFood = NumFood;
+            ant = Ant;
+            antColour = AntColour;
         }
         public override void Initialize()
         {
@@ -41,9 +49,39 @@ namespace Ants
         }
         public override void Update(GameTime gameTime)
         {
-            // TODO: Add your update code here
-
             base.Update(gameTime);
+        }
+        public void setTexture(Texture2D newTex)
+        {
+            currentTex = newTex;
+        }
+        public Boolean getRocky()
+        {
+            return rocky;
+        }
+        public Boolean getFood()
+        {
+            return food;
+        }
+        public Boolean getAntHill()
+        {
+            return antHill;
+        }
+        public Boolean getAnt()
+        {
+            return ant;
+        }
+        public int getNumFood()
+        {
+            return numFood;
+        }
+        public String getAntColour()
+        {
+            return antColour;
+        }
+        public Vector2 getPos()
+        {
+            return pos;
         }
     }
 }
