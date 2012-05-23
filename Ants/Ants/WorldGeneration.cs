@@ -196,6 +196,16 @@ namespace Ants
                 setRocky(x + 2, y);
                 setRocky(x + 3, y);
                 setRocky(x + 4, y);
+                setRocky(x + 9, y);
+                setRocky(x + 10, y);
+                setRocky(x + 11, y);
+                setRocky(x + 12, y);
+                setRocky(x + 13, y);
+                setRocky(x + 14, y);
+                setRocky(x + 10, y + 1);
+                setRocky(x + 11, y + 1);
+                setRocky(x + 12, y + 1);
+                setRocky(x + 13, y + 1);
                 setRocky(x, y + 1);
                 setRocky(x + 1, y + 1);
                 setRocky(x + 2, y + 1);
@@ -206,6 +216,9 @@ namespace Ants
                 setRocky(x + 2, y + 2);
                 setRocky(x + 3, y + 2);
                 setRocky(x + 4, y + 2);
+                setRocky(x + 10, y + 2);
+                setRocky(x + 11, y + 2);
+                setRocky(x + 12, y + 2);
                 setRocky(x + 1, y + 3);
                 setRocky(x + 2, y + 3);
                 setRocky(x + 3, y + 3);
@@ -236,8 +249,36 @@ namespace Ants
                 setRocky(x + 5, y + 8);
                 setRocky(x + 8, y + 8);
                 setRocky(x + 9, y + 8);
-                setRocky(x + 8, y + 9);
-                setRocky(x + 9, y + 9);
+                setRocky(x + 10, y + 10);
+                setRocky(x + 11, y + 10);
+                setRocky(x + 12, y + 10);
+                setRocky(x + 10, y + 11);
+                setRocky(x + 11, y + 11);
+                setRocky(x + 12, y + 12);
+                setRocky(x + 10, y + 12);
+                setRocky(x + 11, y + 12);
+                setRocky(x + 6, y + 13);
+                setRocky(x + 7, y + 13);
+                setRocky(x + 8, y + 13);
+                setRocky(x + 9, y + 13);
+                setRocky(x + 10, y + 13);
+                setRocky(x + 11, y + 13);
+                setRocky(x + 12, y + 13);
+                setRocky(x + 13, y + 13);
+                setRocky(x + 14, y + 13);
+         
+                setRocky(x + 4, y + 14);
+                setRocky(x + 5, y + 14);
+                setRocky(x + 6, y + 14);
+                setRocky(x + 7, y + 14);
+                setRocky(x + 8, y + 14);
+                setRocky(x + 9, y + 14);
+                setRocky(x + 10, y + 14);
+                setRocky(x + 11, y + 14);
+                setRocky(x + 12, y + 14);
+                setRocky(x + 13, y + 14);
+                setRocky(x + 14, y + 14);
+                setRocky(x + 15, y + 14);
             }
             else if (select == 2)
             {
@@ -320,35 +361,122 @@ namespace Ants
                 setRocky(x + 7, y + 9);
                 setRocky(x + 8, y + 9);
                 setRocky(x + 9, y + 9);
+                setRocky(x + 2, y + 10);
+                setRocky(x + 3, y + 10);
+                setRocky(x + 4, y + 10);
+                setRocky(x + 5, y + 10);
+                setRocky(x + 2, y + 10);
+                setRocky(x + 3, y + 10);
+                setRocky(x + 4, y + 10);
+                setRocky(x + 5, y + 10);
+                setRocky(x + 2, y + 10);
+                setRocky(x + 3, y + 10);
+                setRocky(x + 4, y + 10);
+                setRocky(x + 7, y + 10);
+                setRocky(x + 8, y + 10);
+                setRocky(x + 9, y + 10);
+                setRocky(x + 1, y + 10);
+                setRocky(x + 7, y + 10);
+                setRocky(x + 8, y + 10);
+                setRocky(x + 1, y + 10);
+                setRocky(x + 7, y + 10);
+                setRocky(x + 8, y + 10);
+                setRocky(x + 9, y + 10);
+                setRocky(x + 2, y + 11);
+                setRocky(x + 3, y + 11);
+                setRocky(x + 4, y + 11);
+                setRocky(x + 5, y + 11);
+                setRocky(x + 2, y + 11);
+                setRocky(x + 3, y + 11);
+                setRocky(x + 4, y + 11);
+                setRocky(x + 5, y + 11);
+                setRocky(x + 2, y + 11);
+                setRocky(x + 3, y + 11);
+                setRocky(x + 4, y + 11);
+                setRocky(x + 7, y + 11);
+                setRocky(x + 8, y + 11);
+                setRocky(x + 9, y + 11);
+                setRocky(x + 1, y + 11);
+                setRocky(x + 7, y + 11);
+                setRocky(x + 8, y + 11);
+                setRocky(x + 1, y + 11);
+                setRocky(x + 7, y + 11);
+                setRocky(x + 8, y + 11);
+                setRocky(x + 9, y + 11);
+                setRocky(x + 2, y + 14);
+                setRocky(x + 3, y + 14);
+                setRocky(x + 4, y + 14);
+                setRocky(x + 7, y + 14);
+                setRocky(x + 8, y + 14);
+                setRocky(x + 9, y + 14);
+                setRocky(x + 1, y + 14);
+                setRocky(x + 7, y + 14);
+                setRocky(x + 8, y + 14);
+                setRocky(x + 1, y + 14);
+                setRocky(x + 7, y + 14);
+                setRocky(x + 8, y + 14);
+                setRocky(x + 9, y + 14);
+                setRocky(x + 14, y + 12);
+                setRocky(x + 14, y + 11);
+                setRocky(x + 13, y + 12);
+                setRocky(x + 13, y + 11);
+                setRocky(x + 12, y + 12);
+                setRocky(x + 12, y + 11);
+                setRocky(x + 13, y + 13);
+                setRocky(x + 14, y + 13);
+                setRocky(x + 13, y + 13);
+                setRocky(x + 12, y + 13);
+                setRocky(x + 11, y + 13);
+                setRocky(x + 10, y + 13);
+                setRocky(x + 9, y + 13);
+                setRocky(x + 14, y + 3);
+                setRocky(x + 14, y + 4);
+                setRocky(x + 13, y + 3);
+                setRocky(x + 13, y + 4);
+                setRocky(x, y);
+                setRocky(x + 9, y+6);
+                setRocky(x + 11, y + 6);
+                setRocky(x + 12, y + 6);
+                setRocky(x + 13, y + 6);
+                setRocky(x + 14, y + 6);
+                setRocky(x + 10, y + 5);
+                setRocky(x + 11, y + 5);
+                setRocky(x + 12, y + 5);
+                setRocky(x + 13, y + 4);
+                setRocky(x + 12, y + 4);
+                setRocky(x + 9, y + 3);
+                setRocky(x + 10, y + 3);
+                setRocky(x + 11, y + 3);
+                setRocky(x + 12, y + 3);
+                setRocky(x + 13, y + 3);
+                setRocky(x + 8, y + 2);
+                setRocky(x + 10, y + 2);
+                setRocky(x + 11, y + 2);
+                setRocky(x + 12, y + 2);
+                setRocky(x + 13, y + 2);
+                setRocky(x + 10, y + 1);
+                setRocky(x + 11, y + 1);
+                setRocky(x + 12, y + 1);
+                setRocky(x + 13, y + 1);
             }
             else if (select == 4)
             {
-                for (int i = 0; i < 10; i++)
+                for (int i = 1; i < 14; i++)
                 {
-                    if (i < 5)
+                    for (int j = i; j < 14; j++)
                     {
-                        for (int j = i; j < 10 - i; j++)
-                        {
-                            setRocky(x + j, y + i);
-                        }
-                    }
-                    else
-                    {
-                        for (int j = 10 -i; j < i; j++)
-                        {
-                            setRocky(x + j, y + i);
-                        }
+                        setRocky(x + j, y + i);
                     }
                 }
             }
             else if (select == 5)
             {
                 Random rand = new Random();
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 15; i++)
                 {
-                    for (int j = 0; j < 10; j++)
+                    for (int j = 0; j < 15; j++)
                     {
-                        if (rand.Next(99) % 3 == 0)
+                        if (rand.Next(1000) % 100 < 45)
                         {
                             setRocky(x + j, y + i);
                         }
@@ -358,11 +486,11 @@ namespace Ants
             else if (select == 6)
             {
                 Random rand = new Random();
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 15; i++)
                 {
-                    for (int j = 0; j < 10; j++)
+                    for (int j = 0; j < 15; j++)
                     {
-                        if (rand.Next(200) % 4 > 0)
+                        if (rand.Next(1000) % 100 < 55)
                         {
                             setRocky(x + j, y + i);
                         }

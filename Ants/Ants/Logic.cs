@@ -40,6 +40,7 @@ namespace Ants
             texAntsOnFoodBlack = new Texture2D[6];
             texAntsBlankRed = new Texture2D[6];
             texAntsBlankBlack = new Texture2D[6];
+
             WG = new WorldGeneration(this, this);    // this is quite important, check out WorldGeneration Class
 
             base.Initialize();  
@@ -94,8 +95,9 @@ namespace Ants
             texAntsBlankBlack[3] = this.Content.Load<Texture2D>("TileAntWWB");
             texAntsBlankBlack[4] = this.Content.Load<Texture2D>("TileAntNWB");
             texAntsBlankBlack[5] = this.Content.Load<Texture2D>("TileAntNEB");
-        
+
             LoadTiles(spriteBatch);
+            WG.makeRockFormation(30, 30, 2);
         }
         //blank
         protected override void UnloadContent()
