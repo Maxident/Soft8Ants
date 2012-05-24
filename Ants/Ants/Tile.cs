@@ -20,9 +20,9 @@ namespace Ants
         SpriteBatch spriteBatch;
         int height, width, numFood;
         Boolean rocky, food, antHill, ant;
-        String antColour;
+        String colour;
         public Tile(Game game, Texture2D CurrentTex, Vector2 Position, SpriteBatch spritebatch, 
-            Boolean Rocky, Boolean Anthill, Boolean Food, int NumFood, Boolean Ant, String AntColour, int pheremone)
+            Boolean Rocky, Boolean Anthill, Boolean Food, int NumFood, Boolean Ant, String Colour, int pheremone)
             : base(game)
         {
             height = Constants.TileHeight;
@@ -35,7 +35,7 @@ namespace Ants
             food = Food;
             numFood = NumFood;
             ant = Ant;
-            antColour = AntColour;
+            colour = Colour;
         }
         public override void Initialize()
         {
@@ -55,19 +55,19 @@ namespace Ants
         {
             currentTex = newTex;
         }
-        public Boolean getRocky()
+        public bool getRocky()
         {
             return rocky;
         }
-        public Boolean getFood()
+        public bool getFood()
         {
             return food;
         }
-        public Boolean getAntHill()
+        public bool getAntHill()
         {
             return antHill;
         }
-        public Boolean getAnt()
+        public bool getAnt()
         {
             return ant;
         }
@@ -75,9 +75,9 @@ namespace Ants
         {
             return numFood;
         }
-        public String getAntColour()
+        public String getColour()
         {
-            return antColour;
+            return colour;
         }
         public Vector2 getPos()
         {

@@ -19,8 +19,9 @@ namespace Ants
         public Texture2D texAntHillRed, texAntHillBlack,  texTileBlank, texTileFood, texTileRocky; 
         //these are arrays of 6 where 0=east, 1=SE. 2=SW (clockwise from east). they are ant on hill, ant on food, and ant on blank square, red and black for each
         public Texture2D[] texAntsOnHillRed, texAntsOnHillBlack, texAntsOnFoodRed, texAntsOnFoodBlack, texAntsBlankRed, texAntsBlankBlack;
-        Tile[,] tiles; //the grid of tiles 150x150
+        public Tile[,] tiles; //the grid of tiles 150x150
         WorldGeneration WG;
+        Ant[] redAnts, blackAnts;
         public Logic()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -42,6 +43,9 @@ namespace Ants
             texAntsBlankBlack = new Texture2D[6];
 
             WG = new WorldGeneration(this, this);    // this is quite important, check out WorldGeneration Class
+
+            redAnts = new Ant[127];
+            blackAnts = new Ant[127];
 
             base.Initialize();  
         }
@@ -97,7 +101,12 @@ namespace Ants
             texAntsBlankBlack[5] = this.Content.Load<Texture2D>("TileAntNEB");
 
             LoadTiles(spriteBatch);
-            WG.makeRockFormation(30, 30, 2);
+            
+            WG.makeWorld(14, 11);
+
+            populate();
+
+            
         }
         //blank
         protected override void UnloadContent()
@@ -107,6 +116,17 @@ namespace Ants
         //for updating game mechanics (none yet)
         protected override void Update(GameTime gameTime)
         {
+            for (int i = 0; i < 114; i++)
+            {
+                redAnts[i].turn("left");
+
+                redAnts[i].move();
+                redAnts[i].move();
+                redAnts[i].move();
+                redAnts[i].move();
+                redAnts[i].move();
+            }
+
             base.Update(gameTime);
         }
         //draws each tile (which is everything, ants food and rocks are all different tile textures)
@@ -155,10 +175,40 @@ namespace Ants
                 }
             }
         }
+        
         public void loadTile(int x, int y, Texture2D tex, SpriteBatch spriteBatch, Boolean rocky, Boolean antHill, Boolean food, int numFood, Boolean ant, String antColour)
         {
             Vector2 newPos = tiles[x,y].getPos();
             tiles[x, y] = new Tile(this, tex, newPos, spriteBatch, rocky, antHill, food, numFood, ant, antColour, 0);
+        }
+
+        public Tile getTile(int x, int y)
+        {
+            return tiles[x, y];
+        }
+
+        public void populate()
+        {
+            int redID = 0, blackID = 0;
+            for (int i = 0; i < 150; i++)
+            {
+                for (int j = 0; j < 150; j++)
+                {
+                    if (tiles[j, i].getAntHill())
+                    {
+                        if (tiles[j, i].getColour().ToLower().Equals("red"))
+                        {
+                            redAnts[redID] = new Ant(this, this, "red", j, i, 0, redID);
+                            redID++;
+                        }
+                        else if (tiles[j, i].getColour().ToLower().Equals("black"))
+                        {
+                            blackAnts[blackID] = new Ant(this, this, "black", j, i, 0, blackID);
+                            blackID++;
+                        }
+                    }
+                }
+            }
         }
     
     }
