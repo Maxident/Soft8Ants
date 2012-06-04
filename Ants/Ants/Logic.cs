@@ -20,8 +20,11 @@ namespace Ants
         //these are arrays of 6 where 0=east, 1=SE. 2=SW (clockwise from east). they are ant on hill, ant on food, and ant on blank square, red and black for each
         public Texture2D[] texAntsOnHillRed, texAntsOnHillBlack, texAntsOnFoodRed, texAntsOnFoodBlack, texAntsBlankRed, texAntsBlankBlack;
         public Tile[,] tiles; //the grid of tiles 150x150
+        WorldChecker WC;
         WorldGeneration WG;
+        WorldWriter WW;
         Ant[] redAnts, blackAnts;
+
         public Logic()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -31,6 +34,13 @@ namespace Ants
             //when we are done, we can add extra stuff on one side of the screen and make it 1200x900 (4:3) or something sensible
             Content.RootDirectory = "Content";
             tiles = new Tile[150,150];
+            WG = new WorldGeneration(this, this);
+            WW = new WorldWriter(this);
+            setWorldChecker(@"C:\Users\Max\TestWorld.txt");
+        }
+        public void setWorldChecker(String filePath)
+        {
+            WC = new WorldChecker(WG, filePath);
         }
         //just some initial start up stuff in here
         protected override void Initialize()
@@ -41,8 +51,6 @@ namespace Ants
             texAntsOnFoodBlack = new Texture2D[6];
             texAntsBlankRed = new Texture2D[6];
             texAntsBlankBlack = new Texture2D[6];
-
-            WG = new WorldGeneration(this, this);    // this is quite important, check out WorldGeneration Class
 
             redAnts = new Ant[127];
             blackAnts = new Ant[127];
@@ -101,11 +109,8 @@ namespace Ants
             texAntsBlankBlack[5] = this.Content.Load<Texture2D>("TileAntNEB");
 
             LoadTiles(spriteBatch);
-            
-            WG.makeWorld(14, 11);
-
+            WC.go();
             populate();
-
             
         }
         //blank

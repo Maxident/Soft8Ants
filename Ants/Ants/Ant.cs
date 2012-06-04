@@ -17,7 +17,7 @@ namespace Ants
     {
         String colour;
         int x, y, dir, ID;
-        bool carryingFood, isAlive;
+        bool carryingFood, isAlive, resting;
         Logic myLogic;
         Tile myTile;
         public Ant(Game game, Logic MyLogic, String Colour, int X, int Y, int Dir, int id)
@@ -25,6 +25,7 @@ namespace Ants
         {
             carryingFood = false;
             isAlive = true;
+            resting = false;
             colour = Colour;
             x = X;
             y = Y;
@@ -193,12 +194,6 @@ namespace Ants
                         myLogic.loadTile(x, y, myLogic.texAntsBlankBlack[dir], myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), true, colour);
                     }
                 }
-
-
-                
-
-
-
             }
         }
         public Tile sense(String whichTile)
@@ -224,7 +219,6 @@ namespace Ants
                     tempdir--;
                 }
                 ready = true;
-
             }
             else if (whichTile.ToLower().Equals("rightahead"))
             {
@@ -287,5 +281,21 @@ namespace Ants
             return myTile;
         }
 
+        public bool getResting()
+        {
+            return resting;
+        }
+        public void setResting(bool newRest)
+        {
+            resting = newRest;
+        }
+        public bool getAlive()
+        {
+            return isAlive;
+        }
+        public void setDead()
+        {
+            isAlive = false;
+        }
     }//end class
 }//end namespace

@@ -114,7 +114,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Logic.cs" />
     <Compile Include="Tile.cs" />
+    <Compile Include="WorldChecker.cs" />
     <Compile Include="WorldGeneration.cs" />
+    <Compile Include="WorldWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
