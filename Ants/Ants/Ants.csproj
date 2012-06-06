@@ -108,8 +108,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ant.cs" />
+    <Compile Include="AntBrain.cs" />
+    <Compile Include="AntCommand.cs" />
     <Compile Include="BrainChecker.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="KeyboardReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Logic.cs" />

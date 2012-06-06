@@ -12,17 +12,19 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Ants
 {
-    //not actually done much here, just a bit of setup
     public class Ant : Microsoft.Xna.Framework.GameComponent
     {
-        String colour;
-        int x, y, dir, ID;
+        public String colour;
+        int restingNum;
+        public int state, x, y, dir, ID;
         bool carryingFood, isAlive, resting;
         Logic myLogic;
         Tile myTile;
         public Ant(Game game, Logic MyLogic, String Colour, int X, int Y, int Dir, int id)
             : base(game)
         {
+            state = 0;
+            restingNum = 0;
             carryingFood = false;
             isAlive = true;
             resting = false;
@@ -42,12 +44,10 @@ namespace Ants
                 myLogic.loadTile(x, y, myLogic.texAntsOnHillBlack[0], myLogic.spriteBatch, false, true, false, 0, true, "black");
             }
         }
-
         public override void Initialize()
         {
             base.Initialize();
         }
-
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
@@ -100,11 +100,11 @@ namespace Ants
                 {
                     if (colour.ToLower().Equals("red"))
                     {
-                        myLogic.loadTile(x, y, myLogic.texAntHillRed, myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), false, null);
+                        myLogic.loadTile(x, y, myLogic.texAntHillRed, myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), false, colour);
                     }
                     else if (colour.ToLower().Equals("black"))
                     {
-                        myLogic.loadTile(x, y, myLogic.texAntHillBlack, myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), false, null);
+                        myLogic.loadTile(x, y, myLogic.texAntHillBlack, myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), false, colour);
                     }
                 }
                 else
@@ -280,15 +280,6 @@ namespace Ants
             }
             return myTile;
         }
-
-        public bool getResting()
-        {
-            return resting;
-        }
-        public void setResting(bool newRest)
-        {
-            resting = newRest;
-        }
         public bool getAlive()
         {
             return isAlive;
@@ -297,5 +288,125 @@ namespace Ants
         {
             isAlive = false;
         }
+        public void checkDead()
+        {
+            int antsAround = 0;
+            Tile[] surround = new Tile[6];
+            if (y % 2 == 0)
+            {
+                surround[0] = myLogic.getTile(x + 1, y);
+                surround[1] = myLogic.getTile(x, y + 1);
+                surround[2] = myLogic.getTile(x - 1, y + 1);
+                surround[3] = myLogic.getTile(x - 1, y);
+                surround[4] = myLogic.getTile(x - 1, y - 1);
+                surround[5] = myLogic.getTile(x, y - 1);
+            }
+            else
+            {
+                surround[0] = myLogic.getTile(x + 1, y);
+                surround[1] = myLogic.getTile(x + 1, y + 1);
+                surround[2] = myLogic.getTile(x, y + 1);
+                surround[3] = myLogic.getTile(x - 1, y);
+                surround[4] = myLogic.getTile(x, y - 1);
+                surround[5] = myLogic.getTile(x + 1, y - 1);
+            }
+            for (int i = 0; i < 6; i++)
+            {
+                if (surround[i].getAnt() && !surround[i].getColour().Equals(this.colour))
+                {
+                    antsAround++;
+                }
+            }
+            if (antsAround > 4)
+            {
+                setDead();
+                if(carryingFood)
+                {
+                    myLogic.loadTile(x, y, myLogic.texTileFood, myLogic.spriteBatch, false, false, true, 4 + myTile.getNumFood(), false, null);
+                }
+                else
+                {
+                    myLogic.loadTile(x, y, myLogic.texTileFood, myLogic.spriteBatch, false, false, true, 3 + myTile.getNumFood(), false, null);
+                }
+            }
+        }
+        public void mark(int num)
+        {
+            myTile.setPheremone(colour, num);
+        }
+        public void unmark()
+        {
+            myTile.setPheremone(colour, 0);
+        }
+        public void pickUpFood()
+        {
+            if (myTile.food)
+            {
+                myTile.getFood();
+                carryingFood = true;
+            }
+        }
+        public void dropFood()
+        {
+            if (carryingFood)
+            {
+                if (myTile.getAntHill())
+                {
+                    if (colour.ToLower().Equals("red"))
+                    {
+                        myLogic.loadTile(x, y, myLogic.texAntsOnHillRed[dir], myLogic.spriteBatch, false, myTile.getAntHill(), true, myTile.getNumFood() + 1, true, colour);
+                    }
+                    else if (colour.ToLower().Equals("black"))
+                    {
+                        myLogic.loadTile(x, y, myLogic.texAntsOnHillBlack[dir], myLogic.spriteBatch, false, myTile.getAntHill(), true, myTile.getNumFood() + 1, true, colour);
+                    }
+                }
+                else
+                {
+                    if (colour.ToLower().Equals("red"))
+                    {
+                        myLogic.loadTile(x, y, myLogic.texAntsOnFoodRed[dir], myLogic.spriteBatch, false, myTile.getAntHill(), true, myTile.getNumFood() + 1, true, colour);
+                    }
+                    else if (colour.ToLower().Equals("black"))
+                    {
+                        myLogic.loadTile(x, y, myLogic.texAntsOnFoodBlack[dir], myLogic.spriteBatch, false, myTile.getAntHill(), true, myTile.getNumFood() + 1, true, colour);
+                    }
+                }
+                carryingFood = false;
+            }
+        }
+        public void flip(int p, int st1, int st2)
+        {
+            Random rand = new Random();
+            if (rand.Next(p) == 0)
+            {
+                state = st1;
+            }
+            else
+            {
+                state = st2;
+            }
+        }
+        public int getRestingNum()
+        {
+            return restingNum;
+        }
+        public bool getResting()
+        {
+            return resting;
+        }
+        public void setResting(bool rest)
+        {
+            resting = rest;
+        }
+        public void setRestingNum(int rest)
+        {
+            restingNum = rest;
+        }
+        public bool hasFood()
+        {
+            return carryingFood;
+        }
+
     }//end class
 }//end namespace

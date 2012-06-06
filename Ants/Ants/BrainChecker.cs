@@ -6,14 +6,27 @@ using System.IO;
 
 namespace Ants
 {
-    class brainChecker
+    class BrainChecker
     {
+        AntCommand[] commands;
+        int commandCounter;
         int counter;
+        String filePath;
+
+        public BrainChecker(String FP)
+        {
+            filePath = FP;
+        }
+
+
+
         public void runCheck()
         {
-            counter = 0;
+            counter = 0; commandCounter = 0;
+            commands = new AntCommand[10000];
             string lines;
-            System.IO.StreamReader file = new System.IO.StreamReader("sample.ant");
+            System.IO.StreamReader file = new System.IO.StreamReader(filePath);
+
 
             while ((lines = file.ReadLine()) != null)
             {
@@ -32,16 +45,25 @@ namespace Ants
             string[] input = sepLines.Split(' ');
 
             // SENSE COMMAND
-            if (input[0].ToLower().Equals("Sense"))
+            if (input[0].Equals("Sense"))
             {
-                if (isDirection(input[1].ToLower()))
+                if (isDirection(input[1]))
                 {
                     isI(input[2]);
                     isI(input[3]);
 
-                    if (isCondition(input[4].ToLower(), input))
+                    if (isCondition(input[4], input))
                     {
-                        // correct command
+                        if(input[4].ToLower().Equals("marker"))
+                        {
+                            commands[commandCounter] = new AntCommand(input[0].ToLower(), input[1].ToLower(), input[2].ToLower(), input[3].ToLower(), input[4].ToLower(), input[5].ToLower());
+                            commandCounter++;
+                        }
+                        else
+                        {
+                            commands[commandCounter] = new AntCommand(input[0].ToLower(), input[1].ToLower(), input[2].ToLower(), input[3].ToLower(), input[4].ToLower(), null);
+                            commandCounter++;
+                        }
                     }
                     else
                     {
@@ -61,7 +83,8 @@ namespace Ants
                 {
                     if (isSt(input[2]))
                     {
-                        // Complete
+                        commands[commandCounter] = new AntCommand(input[0].ToLower(), input[1].ToLower(), input[2].ToLower(), null, null, null);
+                        commandCounter++;
                     }
                     else
                     {
@@ -80,7 +103,8 @@ namespace Ants
                 {
                     if (isSt(input[2]))
                     {
-                        // Complete
+                        commands[commandCounter] = new AntCommand(input[0].ToLower(), input[1].ToLower(), input[2].ToLower(), null, null, null);
+                        commandCounter++;
                     }
                     else
                     {
@@ -100,7 +124,8 @@ namespace Ants
                 {
                     if (isSt(input[2]))
                     {
-                        // Complete
+                        commands[commandCounter] = new AntCommand(input[0].ToLower(), input[1].ToLower(), input[2].ToLower(), null, null, null);
+                        commandCounter++;
                     }
                     else
                     {
@@ -118,7 +143,8 @@ namespace Ants
             {
                 if (isSt(input[1]))
                 {
-                    // Complete
+                    commands[commandCounter] = new AntCommand(input[0].ToLower(), input[1].ToLower(), null, null, null, null);
+                    commandCounter++;
                 }
                 else
                 {
@@ -133,7 +159,8 @@ namespace Ants
                 {
                     if (isSt(input[2]))
                     {
-                        // Complete
+                        commands[commandCounter] = new AntCommand(input[0].ToLower(), input[1].ToLower(), input[2].ToLower(), null, null, null);
+                        commandCounter++;
                     }
                     else
                     {
@@ -153,7 +180,8 @@ namespace Ants
                 {
                     if (isSt(input[2]))
                     {
-                        // Complete
+                        commands[commandCounter] = new AntCommand(input[0].ToLower(), input[1].ToLower(), input[2].ToLower(), null, null, null);
+                        commandCounter++;
                     }
                     else
                     {
@@ -175,7 +203,8 @@ namespace Ants
                     {
                         if (isSt(input[3]))
                         {
-                            // Complete
+                            commands[commandCounter] = new AntCommand(input[0].ToLower(), input[1].ToLower(), input[2].ToLower(), input[3].ToLower(), null, null);
+                            commandCounter++;
                         }
                         else
                         {
@@ -295,6 +324,10 @@ namespace Ants
                 Console.WriteLine("Invalid Number Transformation on second sense number, line " + counter);
             }
             return isNum;
+        }
+        public AntCommand[] getCommands()
+        {
+            return commands;
         }
     }
 }

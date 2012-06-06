@@ -18,11 +18,11 @@ namespace Ants
         Texture2D currentTex;
         Vector2 pos;
         SpriteBatch spriteBatch;
-        int height, width, numFood;
-        Boolean rocky, food, antHill, ant;
+        int height, width, numFood, pherBlack, pherRed;
+        public Boolean rocky, food, antHill, ant;
         String colour;
         public Tile(Game game, Texture2D CurrentTex, Vector2 Position, SpriteBatch spritebatch, 
-            Boolean Rocky, Boolean Anthill, Boolean Food, int NumFood, Boolean Ant, String Colour, int pheremone)
+            Boolean Rocky, Boolean Anthill, Boolean Food, int NumFood, Boolean Ant, String Colour, int pheremoneBlack, int pheremoneRed)
             : base(game)
         {
             height = Constants.TileHeight;
@@ -63,6 +63,10 @@ namespace Ants
         {
             return food;
         }
+        public void setFood(bool newFood)
+        {
+            food = newFood;
+        }
         public bool getAntHill()
         {
             return antHill;
@@ -75,13 +79,71 @@ namespace Ants
         {
             return numFood;
         }
+        public void setNumFood(int newNum)
+        {
+            numFood = newNum;
+        }
         public String getColour()
         {
             return colour;
         }
-        public Vector2 getPos()
+        public int getPos(String XY)
         {
-            return pos;
+            if (XY.ToLower().Equals("x"))
+            {
+                return (int)pos.X;
+            }
+            else if (XY.ToLower().Equals("y"))
+            {
+                return (int)pos.Y;
+            }
+            return -1;
+        }
+        public int getTilePos(String XY)
+        {
+            if (XY.ToLower().Equals("x"))
+            {
+                return (int)pos.X/6;
+            }
+            else if (XY.ToLower().Equals("y"))
+            {
+                return (int)pos.Y/6;
+            }
+            return -1;
+        }
+        public void setPheremone(string RB, int num)
+        {
+            if (RB.ToLower().Equals("red"))
+            {
+                pherRed = num;
+            }
+            else if (RB.ToLower().Equals("black"))
+            {
+                pherBlack = num;
+            }
+        }
+        public int getPheremone(string RB)
+        {
+            if (RB.ToLower().Equals("red"))
+            {
+                return pherRed;
+            }
+            else if (RB.ToLower().Equals("black"))
+            {
+                return pherBlack;
+            }
+            return -1;
+        }
+        public void takeFood()
+        {
+            if (food)
+            {
+                numFood--;
+                if (numFood == 0)
+                {
+                    food = false;
+                }
+            }
         }
     }
 }
