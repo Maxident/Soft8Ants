@@ -41,10 +41,11 @@ Content\TileAntWWB.xnb
 Content\TileAntWWR.xnb
 Content\pressenter.xnb
 Content\menu.xnb
-Content\instructions.xnb
 Content\SpriteFont1.xnb
 Content\worldgeninstruc.xnb
 Content\SpriteFont2.xnb
 Content\loadmap.xnb
 Content\loadbrains.xnb
 Content\savemap.xnb
+Content\savebrains.xnb
+Content\instructions.xnb

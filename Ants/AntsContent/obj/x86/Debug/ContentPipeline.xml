@@ -377,7 +377,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\pressenter.xnb</Output>
-      <Time>2012-06-05T23:30:31.8540522+01:00</Time>
+      <Time>2012-06-07T13:04:56.76774+01:00</Time>
     </Item>
     <Item>
       <Source>menu.png</Source>
@@ -386,16 +386,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\menu.xnb</Output>
-      <Time>2012-06-05T23:44:40.885614+01:00</Time>
-    </Item>
-    <Item>
-      <Source>instructions.png</Source>
-      <Name>instructions</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\instructions.xnb</Output>
-      <Time>2012-06-06T02:52:06.5158273+01:00</Time>
+      <Time>2012-06-07T13:04:56.6707344+01:00</Time>
     </Item>
     <Item>
       <Source>SpriteFont1.spritefont</Source>
@@ -413,7 +404,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\worldgeninstruc.xnb</Output>
-      <Time>2012-06-06T03:00:25.7493818+01:00</Time>
+      <Time>2012-06-07T13:04:56.5687286+01:00</Time>
     </Item>
     <Item>
       <Source>SpriteFont2.spritefont</Source>
@@ -431,7 +422,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\loadmap.xnb</Output>
-      <Time>2012-06-06T02:56:14.4590088+01:00</Time>
+      <Time>2012-06-07T13:04:56.5747289+01:00</Time>
     </Item>
     <Item>
       <Source>loadbrains.jpg</Source>
@@ -440,7 +431,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\loadbrains.xnb</Output>
-      <Time>2012-06-06T02:58:19.032134+01:00</Time>
+      <Time>2012-06-07T13:04:56.5727288+01:00</Time>
     </Item>
     <Item>
       <Source>savemap.jpg</Source>
@@ -449,7 +440,25 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\savemap.xnb</Output>
-      <Time>2012-06-06T02:57:36.4206967+01:00</Time>
+      <Time>2012-06-07T13:04:52.3984901+01:00</Time>
+    </Item>
+    <Item>
+      <Source>savebrains.jpg</Source>
+      <Name>savebrains</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\savebrains.xnb</Output>
+      <Time>2012-06-07T13:04:56.7707401+01:00</Time>
+    </Item>
+    <Item>
+      <Source>instructions.png</Source>
+      <Name>instructions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\instructions.xnb</Output>
+      <Time>2012-06-07T13:05:59.498328+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -17,7 +17,7 @@ namespace Ants
         public SpriteBatch spriteBatch;
         String gameState;
         //these are the 5 basic tiles, red anthill, black anthill, blank, food, rocky
-        public Texture2D texAntHillRed, texAntHillBlack,  texTileBlank, texTileFood, texTileRocky; 
+        public Texture2D texAntHillRed, texAntHillBlack, texTileBlank, texTileFood, texTileRocky;
         //these are arrays of 6 where 0=east, 1=SE. 2=SW (clockwise from east). they are ant on hill, ant on food, and ant on blank square, red and black for each
         public Texture2D[] texAntsOnHillRed, texAntsOnHillBlack, texAntsOnFoodRed, texAntsOnFoodBlack, texAntsBlankRed, texAntsBlankBlack;
         public Texture2D splash, menu, instructions, loadmap, worldinstr, loadbrain, savemap;
@@ -55,7 +55,7 @@ namespace Ants
             blackAnts = new Ant[114];
 
             Content.RootDirectory = "Content";
-            tiles = new Tile[150,150];
+            tiles = new Tile[150, 150];
             WG = new WorldGeneration(this, this);
             WW = new WorldWriter(this);
             //setWorldChecker(@"C:\Users\Max\TestWorld.txt");
@@ -86,7 +86,7 @@ namespace Ants
         //not in use
         protected override void Initialize()
         {
-            base.Initialize();  
+            base.Initialize();
         }
         //this is just loading all the png files to Texture2D
         protected override void LoadContent()
@@ -151,7 +151,7 @@ namespace Ants
 
             LoadTiles(spriteBatch);
             WG.makeWorld(14, 11);
-            
+
         }
         //blank
         protected override void UnloadContent()
@@ -163,7 +163,7 @@ namespace Ants
         {
             oldkbstate = newkbstate;
             newkbstate = Keyboard.GetState();
-            if(gameState.Equals("intro"))
+            if (gameState.Equals("intro"))
             {
                 if (newkbstate.IsKeyDown(Keys.Enter) && oldkbstate.IsKeyUp(Keys.Enter))
                 {
@@ -381,8 +381,8 @@ namespace Ants
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(loadbrain, new Vector2(0, 0), Color.White);
-                spriteBatch.DrawString(myFont2, loadBrainBlack, new Vector2(20, 600), Color.White);
-                spriteBatch.DrawString(myFont2, loadBrainRed, new Vector2(20, 700), Color.White);
+                spriteBatch.DrawString(myFont2, loadBrainBlack, new Vector2(125, 350), Color.White);
+                spriteBatch.DrawString(myFont2, loadBrainRed, new Vector2(125, 600), Color.White);
                 spriteBatch.End();
             }
             else if (gameState.Equals("menu"))
@@ -392,45 +392,45 @@ namespace Ants
 
                 if (menuState == 0)
                 {
-                    spriteBatch.DrawString(myFont, "Instructions", new Vector2(200, 300), Color.Black);
-                    spriteBatch.DrawString(myFont, "Instructions", new Vector2(201, 301), Color.White);
+                    spriteBatch.DrawString(myFont, "Instructions", new Vector2(220, 200), Color.Red);
+                    spriteBatch.DrawString(myFont, "Instructions", new Vector2(221, 201), Color.White);
                 }
                 else
                 {
-                    spriteBatch.DrawString(myFont, "Instructions", new Vector2(200, 300), Color.White);
-                    spriteBatch.DrawString(myFont, "Instructions", new Vector2(201, 301), Color.Black);
+                    spriteBatch.DrawString(myFont, "Instructions", new Vector2(220, 200), Color.Red);
+                    spriteBatch.DrawString(myFont, "Instructions", new Vector2(221, 201), Color.Black);
                 }
 
 
                 if (menuState == 1)
                 {
-                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(200, 400), Color.Black);
-                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(201, 401), Color.White);
+                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(170, 300), Color.Red);
+                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(171, 301), Color.White);
                 }
                 else
                 {
-                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(200, 400), Color.White);
-                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(201, 401), Color.Black);
+                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(170, 300), Color.Red);
+                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(171, 301), Color.Black);
                 }
                 if (menuState == 2)
                 {
-                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(200, 500), Color.Black);
-                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(201, 501), Color.White);
+                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(220, 400), Color.Red);
+                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(221, 401), Color.White);
                 }
                 else
                 {
-                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(200, 500), Color.White);
-                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(201, 501), Color.Black);
+                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(220, 400), Color.Red);
+                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(221, 401), Color.Black);
                 }
                 if (menuState == 3)
                 {
-                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(200, 600), Color.Black);
-                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(201, 601), Color.White);
+                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(220, 500), Color.Red);
+                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(221, 501), Color.White);
                 }
                 else
                 {
-                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(200, 600), Color.White);
-                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(201, 601), Color.Black);
+                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(220, 500), Color.Red);
+                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(221, 501), Color.Black);
                 }
                 spriteBatch.End();
             }
@@ -517,10 +517,10 @@ namespace Ants
                     }
                 }
             }
-        }        
+        }
         public void loadTile(int x, int y, Texture2D tex, SpriteBatch spriteBatch, Boolean rocky, Boolean antHill, Boolean food, int numFood, Boolean ant, String antColour)
         {
-            Vector2 newPos = new Vector2(tiles[x,y].getPos("x"), tiles[x,y].getPos("y"));
+            Vector2 newPos = new Vector2(tiles[x, y].getPos("x"), tiles[x, y].getPos("y"));
             tiles[x, y] = new Tile(this, tex, newPos, spriteBatch, rocky, antHill, food, numFood, ant, antColour, 0, 0);
         }
         public Tile getTile(int x, int y)
@@ -538,7 +538,7 @@ namespace Ants
                 else if (blackAnts[i].x == X && blackAnts[i].y == Y && blackAnts[i].getAlive())
                 {
                     return blackAnts[i];
-                }  
+                }
             }
             return null;
         }
@@ -623,6 +623,6 @@ namespace Ants
                 }
             }
         }
-    
+
     }
 }

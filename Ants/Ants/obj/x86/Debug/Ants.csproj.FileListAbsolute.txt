@@ -53,10 +53,11 @@ C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\TileAntWWB.
 C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\TileAntWWR.xnb
 C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\pressenter.xnb
 C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\menu.xnb
-C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\instructions.xnb
 C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\SpriteFont1.xnb
 C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\worldgeninstruc.xnb
 C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\SpriteFont2.xnb
 C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\loadmap.xnb
 C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\loadbrains.xnb
 C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\savemap.xnb
+C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\savebrains.xnb
+C:\Users\Max\Documents\GIT\Soft8Ants\Ants\Ants\bin\x86\Debug\Content\instructions.xnb
