@@ -474,14 +474,20 @@ namespace Ants
             }
             else
             {
+                
                 GraphicsDevice.Clear(Color.Black);
                 for (int i = 0; i < 150; i++)
                 {
                     for (int j = 0; j < 150; j++)
                     {
                         tiles[i, j].Draw(gameTime);
+                        
                     }
                 }
+                spriteBatch.Begin();
+                spriteBatch.DrawString(myFont, redScore.ToString(), new Vector2(20, 10), Color.Red);
+                spriteBatch.DrawString(myFont, blackScore.ToString(), new Vector2(850, 10), Color.Black);
+                spriteBatch.End();
             }
 
             base.Draw(gameTime);
