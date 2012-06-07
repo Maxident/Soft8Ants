@@ -214,7 +214,7 @@ namespace Ants
                             catch { }
                         }
                     }
-                    if (nextCom.get(4).ToLower().Equals("FoeHome"))
+                    if (nextCom.get(4).ToLower().Equals("foehome"))
                     {
                         if (ants[AntID].sense(nextCom.get(1)).getAntHill() && !ants[AntID].sense(nextCom.get(1)).getColour().ToLower().Equals(ants[AntID].colour))
                         {
@@ -269,7 +269,7 @@ namespace Ants
                         }
                         catch { }
                     }
-                    else if (!ants[AntID].hasFood() && myLogic.getTile(ants[AntID].x, ants[AntID].y).food)
+                    else if (!ants[AntID].hasFood() && myLogic.getTile(ants[AntID].x, ants[AntID].y).getFood())
                     {
                         ants[AntID].pickUpFood();
                         try

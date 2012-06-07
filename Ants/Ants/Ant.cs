@@ -90,6 +90,7 @@ namespace Ants
         }
         public void move()
         {
+            myTile = myLogic.getTile(x, y);
             if (sense("ahead").getRocky() == false && sense("ahead").getAnt() == false)
             {
                 if (myTile.getFood())
@@ -98,13 +99,28 @@ namespace Ants
                 }
                 else if (myTile.getAntHill())
                 {
-                    if (colour.ToLower().Equals("red"))
+                    if (myTile.getColour().Equals(this.colour))
                     {
-                        myLogic.loadTile(x, y, myLogic.texAntHillRed, myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), false, colour);
+
+                        if (colour.ToLower().Equals("red"))
+                        {
+                            myLogic.loadTile(x, y, myLogic.texAntHillRed, myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), false, "red");
+                        }
+                        else if (colour.ToLower().Equals("black"))
+                        {
+                            myLogic.loadTile(x, y, myLogic.texAntHillBlack, myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), false, "black");
+                        }
                     }
-                    else if (colour.ToLower().Equals("black"))
+                    else
                     {
-                        myLogic.loadTile(x, y, myLogic.texAntHillBlack, myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), false, colour);
+                        if (colour.ToLower().Equals("red"))
+                        {
+                            myLogic.loadTile(x, y, myLogic.texAntHillBlack, myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), false, "black");
+                        }
+                        else if (colour.ToLower().Equals("black"))
+                        {
+                            myLogic.loadTile(x, y, myLogic.texAntHillRed, myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), false, "red");
+                        }
                     }
                 }
                 else
@@ -161,6 +177,7 @@ namespace Ants
                         }
                         break;
                 }
+                Tile oldTile = myTile;
                 myTile = myLogic.getTile(x, y);
 
 
@@ -172,7 +189,14 @@ namespace Ants
                     }
                     else if (myTile.getAntHill())
                     {
-                        myLogic.loadTile(x, y, myLogic.texAntsOnHillRed[dir], myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), true, colour);
+                        if (myTile.getColour().Equals(this.colour))
+                        {
+                            myLogic.loadTile(x, y, myLogic.texAntsOnHillRed[dir], myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), true, colour);
+                        }
+                        else
+                        {
+                            myLogic.loadTile(x, y, myLogic.texAntsOnHillRed[dir], myLogic.spriteBatch, myTile.getRocky(), myTile.getAntHill(), myTile.getFood(), myTile.getNumFood(), true, oldTile.getColour());
+                        }
                     }
                     else
                     {
@@ -340,9 +364,14 @@ namespace Ants
         }
         public void pickUpFood()
         {
-            if (myTile.food)
+            
+            if (myTile.getFood() && !carryingFood)
             {
-                myTile.getFood();
+                myTile.setNumFood(myTile.getNumFood() - 1);
+                if (myTile.getNumFood() == 0)
+                {
+                    myTile.setFood(false);
+                }
                 carryingFood = true;
             }
         }
@@ -350,6 +379,7 @@ namespace Ants
         {
             if (carryingFood)
             {
+                
                 if (myTile.getAntHill())
                 {
                     if (colour.ToLower().Equals("red"))

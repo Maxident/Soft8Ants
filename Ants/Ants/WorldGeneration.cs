@@ -72,55 +72,55 @@ namespace Ants
             if (y % 2 == 1)
             {
 
-                for (int i = 3; i < 9; i++)
+                for (int i = 3; i < 10; i++)
                 {
                     setAntHill(x + i, y, RB);
                 }
-                for (int i = 3; i < 10; i++)
+                for (int i = 3; i < 11; i++)
                 {
                     setAntHill(x + i, y + 1, RB);
                 }
-                for (int i = 2; i < 10; i++)
+                for (int i = 2; i < 11; i++)
                 {
                     setAntHill(x + i, y + 2, RB);
                 }
-                for (int i = 2; i < 11; i++)
+                for (int i = 2; i < 12; i++)
                 {
                     setAntHill(x + i, y + 3, RB);
                 }
-                for (int i = 1; i < 11; i++)
+                for (int i = 1; i < 12; i++)
                 {
                     setAntHill(x + i, y + 4, RB);
                 }
-                for (int i = 1; i < 12; i++)
+                for (int i = 1; i < 13; i++)
                 {
                     setAntHill(x + i, y + 5, RB);
                 }
-                for (int i = 0; i < 12; i++)
+                for (int i = 0; i < 13; i++)
                 {
                     setAntHill(x + i, y + 6, RB);
                 }
-                for (int i = 1; i < 12; i++)
+                for (int i = 1; i < 13; i++)
                 {
                     setAntHill(x + i, y + 7, RB);
                 }
-                for (int i = 1; i < 11; i++)
+                for (int i = 1; i < 12; i++)
                 {
                     setAntHill(x + i, y + 8, RB);
                 }
-                for (int i = 2; i < 11; i++)
+                for (int i = 2; i < 12; i++)
                 {
                     setAntHill(x + i, y + 9, RB);
                 }
-                for (int i = 2; i < 10; i++)
+                for (int i = 2; i < 11; i++)
                 {
                     setAntHill(x + i, y + 10, RB);
                 }
-                for (int i = 3; i < 10; i++)
+                for (int i = 3; i < 11; i++)
                 {
                     setAntHill(x + i, y + 11, RB);
                 }
-                for (int i = 3; i < 9; i++)
+                for (int i = 3; i < 10; i++)
                 {
                     setAntHill(x + i, y + 12, RB);
                 }
@@ -128,55 +128,55 @@ namespace Ants
             else
             {
 
-                for (int i = 3; i < 9; i++)
+                for (int i = 3; i < 10; i++)
                 {
                     setAntHill(x + i, y, RB);
                 }
-                for (int i = 2; i < 9; i++)
+                for (int i = 2; i < 10; i++)
                 {
                     setAntHill(x + i, y + 1, RB);
                 }
-                for (int i = 2; i < 10; i++)
+                for (int i = 2; i < 11; i++)
                 {
                     setAntHill(x + i, y + 2, RB);
                 }
-                for (int i = 1; i < 10; i++)
+                for (int i = 1; i < 11; i++)
                 {
                     setAntHill(x + i, y + 3, RB);
                 }
-                for (int i = 1; i < 11; i++)
+                for (int i = 1; i < 12; i++)
                 {
                     setAntHill(x + i, y + 4, RB);
                 }
-                for (int i = 0; i < 11; i++)
+                for (int i = 0; i < 12; i++)
                 {
                     setAntHill(x + i, y + 5, RB);
                 }
-                for (int i = 0; i < 12; i++)
+                for (int i = 0; i < 13; i++)
                 {
                     setAntHill(x + i, y + 6, RB);
                 }
-                for (int i = 0; i < 11; i++)
+                for (int i = 0; i < 12; i++)
                 {
                     setAntHill(x + i, y + 7, RB);
                 }
-                for (int i = 1; i < 11; i++)
+                for (int i = 1; i < 12; i++)
                 {
                     setAntHill(x + i, y + 8, RB);
                 }
-                for (int i = 1; i < 10; i++)
+                for (int i = 1; i < 11; i++)
                 {
                     setAntHill(x + i, y + 9, RB);
                 }
-                for (int i = 2; i < 10; i++)
+                for (int i = 2; i < 11; i++)
                 {
                     setAntHill(x + i, y + 10, RB);
                 }
-                for (int i = 2; i < 9; i++)
+                for (int i = 2; i < 10; i++)
                 {
                     setAntHill(x + i, y + 11, RB);
                 }
-                for (int i = 3; i < 9; i++)
+                for (int i = 3; i < 10; i++)
                 {
                     setAntHill(x + i, y + 12, RB);
                 }

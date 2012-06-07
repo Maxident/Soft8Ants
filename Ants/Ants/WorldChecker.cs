@@ -154,6 +154,7 @@ namespace Ants
         {
             for (int i = 0; i < 150; i++)
             {
+                
                 string[] currentArray = (string[])worldLines[i+2];
                 for (int j = 0; j < arraySize; j++)
                 {

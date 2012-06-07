@@ -262,13 +262,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="worldgeninstruc.png">
-      <Name>worldgeninstruc</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="SpriteFont2.spritefont">
       <Name>SpriteFont2</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -310,6 +303,13 @@
   <ItemGroup>
     <Compile Include="instructions.png">
       <Name>instructions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="worldgeninstruc.png">
+      <Name>worldgeninstruc</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

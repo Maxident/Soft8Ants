@@ -54,7 +54,7 @@ namespace Ants
 
                     if (isCondition(input[4], input))
                     {
-                        if(input[4].ToLower().Equals("marker"))
+                        if(input[4].ToLower().Equals("Marker"))
                         {
                             commands[commandCounter] = new AntCommand(input[0].ToLower(), input[1].ToLower(), input[2].ToLower(), input[3].ToLower(), input[4].ToLower(), input[5].ToLower());
                             commandCounter++;
@@ -118,7 +118,7 @@ namespace Ants
             }
 
 
-            else if (input[0].Equals("Pickup"))
+            else if (input[0].Equals("PickUp"))
             {
                 if (isSt(input[1]))
                 {

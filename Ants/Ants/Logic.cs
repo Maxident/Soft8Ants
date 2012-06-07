@@ -13,6 +13,7 @@ namespace Ants
 {
     public class Logic : Microsoft.Xna.Framework.Game
     {
+        int testint;
         GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
         String gameState;
@@ -36,6 +37,9 @@ namespace Ants
         bool blackLoaded;
         public Logic()
         {
+            testint = 0;
+
+
             graphics = new GraphicsDeviceManager(this);
             this.graphics.PreferredBackBufferWidth = 903;
             this.graphics.PreferredBackBufferHeight = 900;
@@ -51,8 +55,8 @@ namespace Ants
             oldkbstate = new KeyboardState();
             newkbstate = new KeyboardState();
 
-            redAnts = new Ant[114];
-            blackAnts = new Ant[114];
+            redAnts = new Ant[127];
+            blackAnts = new Ant[127];
 
             Content.RootDirectory = "Content";
             tiles = new Tile[150, 150];
@@ -67,6 +71,8 @@ namespace Ants
             loadBrainBlack = "";
             saveMapSTR = "";
             menuState = 0;
+            redScore = 0;
+            blackScore = 0;
             kbreader = new KeyboardReader(this);
             blackLoaded = false;
         }
@@ -179,9 +185,16 @@ namespace Ants
                     loadBrainBlack = kbreader.getText();
                     if (newkbstate.IsKeyDown(Keys.Enter) && oldkbstate.IsKeyUp(Keys.Enter))
                     {
-                        setBlackAntBrain(loadBrainBlack);
-                        kbreader.reset();
-                        blackLoaded = true;
+                        try
+                        {
+                            setBlackAntBrain(loadBrainBlack);
+                            kbreader.reset();
+                            blackLoaded = true;
+                        }
+                        catch
+                        {
+                            kbreader.reset();
+                        }
                     }
                 }
                 else
@@ -189,9 +202,16 @@ namespace Ants
                     loadBrainRed = kbreader.getText();
                     if (newkbstate.IsKeyDown(Keys.Enter) && oldkbstate.IsKeyUp(Keys.Enter))
                     {
-                        setRedAntBrain(loadBrainRed);
-                        kbreader.reset();
-                        gameState = "menu";
+                        try
+                        {
+                            setRedAntBrain(loadBrainRed);
+                            kbreader.reset();
+                            gameState = "menu";
+                        }
+                        catch
+                        {
+                            kbreader.reset();
+                        }
                     }
                 }
             }
@@ -305,10 +325,18 @@ namespace Ants
                 saveMapSTR = kbreader.getText();
                 if (newkbstate.IsKeyDown(Keys.Enter) && oldkbstate.IsKeyUp(Keys.Enter))
                 {
-                    WW.setLines();
-                    WW.write(saveMapSTR);
-                    kbreader.reset();
-                    gameState = "menu";
+                    try
+                    {
+                        WW.setLines();
+                        WW.write(saveMapSTR);
+                        kbreader.reset();
+                        gameState = "menu";
+                    }
+                    catch
+                    {
+                        kbreader.reset();
+                    }
+
                 }
                 if (newkbstate.IsKeyDown(Keys.Escape) && oldkbstate.IsKeyUp(Keys.Escape))
                 {
@@ -325,34 +353,62 @@ namespace Ants
                 }
                 if (newkbstate.IsKeyDown(Keys.Enter) && oldkbstate.IsKeyUp(Keys.Enter))
                 {
-                    setWorldChecker(loadMapSTR);
-                    kbreader.reset();
-                    populate();
-                    gameState = "";
+                    try
+                    {
+                        setWorldChecker(loadMapSTR);
+                        kbreader.reset();
+                        populate();
+                        gameState = "";
+                    }
+                    catch
+                    {
+                        kbreader.reset();
+                    }
                 }
             }
 
             else
             {
-
-                for (int i = 0; i < 114; i++)
+                for (int i = 0; i < 127; i++)
                 {
-                    redBrain.executeCommand(i);
-                    blackBrain.executeCommand(i);
+                   redBrain.executeCommand(i);
+                   blackBrain.executeCommand(i);
                 }
                 for (int i = 0; i < 150; i++)
                 {
                     for (int j = 0; j < 150; j++)
                     {
+                        if(tiles[j, i].getNumFood() > 0 && !tiles[j, i].getAntHill() && !tiles[j, i].getAnt())
+                        {
+                            loadTile(j, i, texTileFood, spriteBatch, false, false, true, tiles[j, i].getNumFood(), false, null);
+                        }
+                        else if (tiles[j, i].getNumFood() == 0 && !tiles[j, i].getAntHill() && !tiles[j, i].getAnt())
+                        {
+                            loadTile(j, i, texTileBlank, spriteBatch, false, false, false, 0, false, null);
+                        }
                         if (tiles[j, i].getAntHill())
                         {
+                            if (tiles[j, i].getAnt() == false)
+                            {
+                                if (i < 75 && j < 75)
+                                {
+                                    loadTile(j, i, texAntHillRed, spriteBatch, false, true, tiles[j, i].getFood(), tiles[j, i].getNumFood(), false, "red");
+                                }
+                                else
+                                {
+                                    loadTile(j, i, texAntHillBlack, spriteBatch, false, true, tiles[j, i].getFood(), tiles[j, i].getNumFood(), false, "black");
+                                }
+                            }
                             if (tiles[j, i].getFood())
                             {
                                 if (tiles[j, i].getColour().ToLower().Equals("red"))
                                 {
-                                    redScore += tiles[j, i].getNumFood();
-                                    tiles[j, i].setNumFood(0);
-                                    tiles[j, i].setFood(false);
+                                    if (tiles[j, i].getFood() == true)
+                                    {
+                                        redScore += tiles[j, i].getNumFood();
+                                        tiles[j, i].setNumFood(0);
+                                        tiles[j, i].setFood(false);
+                                    }
                                 }
                                 else if (tiles[j, i].getColour().ToLower().Equals("black"))
                                 {
@@ -364,6 +420,8 @@ namespace Ants
                         }
                     }
                 }
+                
+                //this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 700.0f);
                 base.Update(gameTime);
             }
         }
@@ -392,45 +450,45 @@ namespace Ants
 
                 if (menuState == 0)
                 {
-                    spriteBatch.DrawString(myFont, "Instructions", new Vector2(220, 200), Color.Red);
-                    spriteBatch.DrawString(myFont, "Instructions", new Vector2(221, 201), Color.White);
+                    spriteBatch.DrawString(myFont, "Credits", new Vector2(340, 200), Color.Red);
+                    spriteBatch.DrawString(myFont, "Credits", new Vector2(341, 201), Color.White);
                 }
                 else
                 {
-                    spriteBatch.DrawString(myFont, "Instructions", new Vector2(220, 200), Color.Red);
-                    spriteBatch.DrawString(myFont, "Instructions", new Vector2(221, 201), Color.Black);
+                    spriteBatch.DrawString(myFont, "Credits", new Vector2(340, 200), Color.Red);
+                    spriteBatch.DrawString(myFont, "Credits", new Vector2(341, 201), Color.Black);
                 }
 
 
                 if (menuState == 1)
                 {
-                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(170, 300), Color.Red);
-                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(171, 301), Color.White);
+                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(210, 300), Color.Red);
+                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(211, 301), Color.White);
                 }
                 else
                 {
-                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(170, 300), Color.Red);
-                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(171, 301), Color.Black);
+                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(210, 300), Color.Red);
+                    spriteBatch.DrawString(myFont, "World Generator", new Vector2(211, 301), Color.Black);
                 }
                 if (menuState == 2)
                 {
-                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(220, 400), Color.Red);
-                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(221, 401), Color.White);
+                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(240, 400), Color.Red);
+                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(241, 401), Color.White);
                 }
                 else
                 {
-                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(220, 400), Color.Red);
-                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(221, 401), Color.Black);
+                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(240, 400), Color.Red);
+                    spriteBatch.DrawString(myFont, "World Loader", new Vector2(241, 401), Color.Black);
                 }
                 if (menuState == 3)
                 {
-                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(220, 500), Color.Red);
-                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(221, 501), Color.White);
+                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(240, 500), Color.Red);
+                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(241, 501), Color.White);
                 }
                 else
                 {
-                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(220, 500), Color.Red);
-                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(221, 501), Color.Black);
+                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(240, 500), Color.Red);
+                    spriteBatch.DrawString(myFont, "Start Random", new Vector2(241, 501), Color.Black);
                 }
                 spriteBatch.End();
             }
@@ -485,8 +543,8 @@ namespace Ants
                     }
                 }
                 spriteBatch.Begin();
-                spriteBatch.DrawString(myFont, redScore.ToString(), new Vector2(20, 10), Color.Red);
-                spriteBatch.DrawString(myFont, blackScore.ToString(), new Vector2(850, 10), Color.Black);
+                spriteBatch.DrawString(myFont, redScore.ToString(), new Vector2(100, 10), Color.Red);
+                spriteBatch.DrawString(myFont, blackScore.ToString(), new Vector2(780, 10), Color.Black);
                 spriteBatch.End();
             }
 
