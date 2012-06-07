@@ -378,11 +378,11 @@ namespace Ants
                 {
                     for (int j = 0; j < 150; j++)
                     {
-                        if(tiles[j, i].getNumFood() > 0 && !tiles[j, i].getAntHill() && !tiles[j, i].getAnt())
+                        if(tiles[j, i].getNumFood() > 0 && !tiles[j, i].getAntHill() && !tiles[j, i].getAnt()  && !tiles[j, i].getRocky())
                         {
                             loadTile(j, i, texTileFood, spriteBatch, false, false, true, tiles[j, i].getNumFood(), false, null);
                         }
-                        else if (tiles[j, i].getNumFood() == 0 && !tiles[j, i].getAntHill() && !tiles[j, i].getAnt())
+                        else if (tiles[j, i].getNumFood() == 0 && !tiles[j, i].getAntHill() && !tiles[j, i].getAnt() && !tiles[j, i].getRocky())
                         {
                             loadTile(j, i, texTileBlank, spriteBatch, false, false, false, 0, false, null);
                         }
