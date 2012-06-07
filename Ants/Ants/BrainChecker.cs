@@ -26,7 +26,7 @@ namespace Ants
             commands = new AntCommand[10000];
             string lines;
             System.IO.StreamReader file = new System.IO.StreamReader(filePath);
-
+            
 
             while ((lines = file.ReadLine()) != null)
             {

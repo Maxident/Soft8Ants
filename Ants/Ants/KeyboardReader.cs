@@ -142,12 +142,57 @@ namespace Ants
             }
             if (newkbstate.IsKeyDown(Keys.Back) && oldkbstate.IsKeyUp(Keys.Back))
             {
-                if (!readText.Equals("C:\\"))
+                if (readText.Length > 0)
                 {
                     readText = readText.Remove(readText.Length - 1);
                 }
             }
+            if (newkbstate.IsKeyDown(Keys.OemSemicolon) && oldkbstate.IsKeyUp(Keys.OemSemicolon))
+            {
+                readText += ":";
+            }
             base.Update(gameTime);
+
+            if (newkbstate.IsKeyDown(Keys.NumPad1) && oldkbstate.IsKeyUp(Keys.NumPad1))
+            {
+                readText += "1";
+            }
+            if (newkbstate.IsKeyDown(Keys.NumPad2) && oldkbstate.IsKeyUp(Keys.NumPad2))
+            {
+                readText += "2";
+            }
+            if (newkbstate.IsKeyDown(Keys.NumPad3) && oldkbstate.IsKeyUp(Keys.NumPad3))
+            {
+                readText += "3";
+            }
+            if (newkbstate.IsKeyDown(Keys.NumPad4) && oldkbstate.IsKeyUp(Keys.NumPad4))
+            {
+                readText += "4";
+            }
+            if (newkbstate.IsKeyDown(Keys.NumPad5) && oldkbstate.IsKeyUp(Keys.NumPad5))
+            {
+                readText += "5";
+            }
+            if (newkbstate.IsKeyDown(Keys.NumPad6) && oldkbstate.IsKeyUp(Keys.NumPad6))
+            {
+                readText += "6";
+            }
+            if (newkbstate.IsKeyDown(Keys.NumPad7) && oldkbstate.IsKeyUp(Keys.NumPad7))
+            {
+                readText += "7";
+            }
+            if (newkbstate.IsKeyDown(Keys.NumPad8) && oldkbstate.IsKeyUp(Keys.NumPad8))
+            {
+                readText += "8";
+            }
+            if (newkbstate.IsKeyDown(Keys.NumPad9) && oldkbstate.IsKeyUp(Keys.NumPad9))
+            {
+                readText += "9";
+            }
+            if (newkbstate.IsKeyDown(Keys.NumPad0) && oldkbstate.IsKeyUp(Keys.NumPad0))
+            {
+                readText += "0";
+            }
         }
         public String getText()
         {
