@@ -177,13 +177,24 @@ namespace Ants
                     }
                     if (nextCom.get(4).ToLower().Equals("foemarker"))
                     {
-                        if (ants[AntID].sense(nextCom.get(1)).getColour().ToLower().Equals(ants[AntID].colour))
+                        if (ants[AntID].sense(nextCom.get(1)).getColour() != null)
                         {
-                            try
+                            if (ants[AntID].sense(nextCom.get(1)).getColour().ToLower().Equals(ants[AntID].colour))
                             {
-                                ants[AntID].state = Convert.ToInt32(nextCom.get(3));
+                                try
+                                {
+                                    ants[AntID].state = Convert.ToInt32(nextCom.get(3));
+                                }
+                                catch { }
                             }
-                            catch { }
+                            else
+                            {
+                                try
+                                {
+                                    ants[AntID].state = Convert.ToInt32(nextCom.get(2));
+                                }
+                                catch { }
+                            }
                         }
                         else
                         {

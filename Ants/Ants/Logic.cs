@@ -185,16 +185,16 @@ namespace Ants
                     loadBrainBlack = kbreader.getText();
                     if (newkbstate.IsKeyDown(Keys.Enter) && oldkbstate.IsKeyUp(Keys.Enter))
                     {
-                        try
-                        {
+//                        try
+//                        {
                             setBlackAntBrain(loadBrainBlack);
                             kbreader.reset();
                             blackLoaded = true;
-                        }
-                        catch
-                        {
-                            kbreader.reset();
-                        }
+//                        }
+//                        catch
+//                        {
+//                            kbreader.reset();
+//                        }
                     }
                 }
                 else

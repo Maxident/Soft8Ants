@@ -30,7 +30,6 @@ namespace Ants
 
             while ((lines = file.ReadLine()) != null)
             {
-                Console.WriteLine(lines);
                 commandCheck(lines);
                 counter++;
             }
@@ -45,6 +44,11 @@ namespace Ants
             string[] input = sepLines.Split(' ');
 
             // SENSE COMMAND
+            if (counter == 399)
+            {
+                Console.Write("");
+            }
+
             if (input[0].Equals("Sense"))
             {
                 if (isDirection(input[1]))
@@ -54,7 +58,7 @@ namespace Ants
 
                     if (isCondition(input[4], input))
                     {
-                        if(input[4].ToLower().Equals("Marker"))
+                        if(input[4].ToLower().Equals("Marker") && input[5] != null)
                         {
                             commands[commandCounter] = new AntCommand(input[0].ToLower(), input[1].ToLower(), input[2].ToLower(), input[3].ToLower(), input[4].ToLower(), input[5].ToLower());
                             commandCounter++;
