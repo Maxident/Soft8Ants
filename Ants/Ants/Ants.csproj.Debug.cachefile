@@ -39,7 +39,6 @@ Content\TileAntSWB.xnb
 Content\TileAntSWR.xnb
 Content\TileAntWWB.xnb
 Content\TileAntWWR.xnb
-Content\worldgeninstruc.xnb
 Content\loadbrains.xnb
 Content\loadmap.xnb
 Content\menu.xnb
@@ -47,5 +46,6 @@ Content\pressenter.xnb
 Content\savebrains.xnb
 Content\savemap.xnb
 Content\instructions.xnb
+Content\worldgeninstruc.xnb
 Content\SpriteFont1.xnb
 Content\SpriteFont2.xnb

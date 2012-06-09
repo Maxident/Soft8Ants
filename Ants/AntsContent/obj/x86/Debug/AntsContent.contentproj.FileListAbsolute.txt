@@ -2,3 +2,4 @@ C:\Users\Max\Documents\Visual Studio 2010\Projects\Ants\Ants\AntsContent\obj\x86
 C:\Users\Max\Documents\GIT\Soft8Ants\Ants\AntsContent\obj\x86\Debug\ResolveAssemblyReference.cache
 \\smbhome.uscs.susx.ac.uk\mc381\Downloads\Maxident-Soft8Ants-4c54296\Maxident-Soft8Ants-4c54296\Ants\AntsContent\obj\x86\Debug\ResolveAssemblyReference.cache
 Z:\Downloads\Maxident-Soft8Ants-4c54296\Maxident-Soft8Ants-4c54296\Ants\AntsContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Chris\Documents\GitHub\Soft8Ants\Ants\AntsContent\obj\x86\Debug\ResolveAssemblyReference.cache
